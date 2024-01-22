@@ -58,7 +58,7 @@ export const CardUser = () => {
           </InputRightAddon>
         </InputGroup>
       </Box>
-      <Box maxHeight="320px" overflowY="auto">
+      <Box height={300} overflowY="auto" overflowX="hidden">
         {filteredProjects.length > 0 ? (
           filteredProjects.map((p) => (
             <Card borderRadius={0} mb={1} key={p.id} p={4}>

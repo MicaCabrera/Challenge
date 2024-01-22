@@ -13,11 +13,21 @@ import { useContext } from 'react'
 import { ProjectsContext } from '../context/projectsContext'
 
 export const ModalDelete = ({ isOpen, onClose }) => {
-  const { deleteProject, currentProject } = useContext(ProjectsContext)
+  const { deleteProject, currentProject, setCurrentProject } =
+    useContext(ProjectsContext)
 
   const handleDelete = () => {
     deleteProject(currentProject.id)
     onClose()
+    setCurrentProject({
+      id: null,
+      name: '',
+      description: '',
+      p_manager: '',
+      asigned: '',
+      status: '',
+      date: '',
+    })
   }
 
   return (
